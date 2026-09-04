@@ -57,10 +57,6 @@ function Avatar({ initials, className = "" }: { initials: string; className?: st
   );
 }
 
-function SectionLabel({ children, dark = false }: { children: React.ReactNode; dark?: boolean }) {
-  return <p className={`eyebrow section-label${dark ? " eyebrow-light" : ""}`}>{children}</p>;
-}
-
 function TextCta({ children, href, dark = false }: { children: React.ReactNode; href: string; dark?: boolean }) {
   return (
     <a className={`button section-button${dark ? " section-button-dark" : ""}`} href={href}>
@@ -177,16 +173,12 @@ export default function Home() {
             <span>Trusted by 200+ service businesses</span>
           </div>
         </div>
-
-        <p className="hero-micro hero-micro-left">More conversations.<br />More customers.<br />A brighter business.</p>
-        <p className="hero-micro hero-micro-right">Turn<br />conversations<br />into revenue.</p>
       </section>
 
       <section className="feature-section recovery" id="pricing">
         <div className="light-arc light-arc-one" aria-hidden="true" />
         <div className="feature-grid shell">
           <div className="feature-copy">
-            <SectionLabel>01 / Recovery</SectionLabel>
             <h2>9 990 Kč is about<br />to disappear.</h2>
             <p>
               Petr showed high buying intent but didn’t complete<br className="desktop-break" /> a booking. Wonback spots these opportunities<br className="desktop-break" /> automatically — so you can follow up at the right time<br className="desktop-break" /> and turn interest into revenue.
@@ -214,10 +206,8 @@ export default function Home() {
       <section className="feature-section attribution" id="attribution">
         <div className="analysis-grid" aria-hidden="true" />
         <div className="analysis-arc" aria-hidden="true" />
-        <p className="side-note">Content<br />creates<br />customers.</p>
         <div className="feature-grid shell">
           <div className="feature-copy feature-copy-dark">
-            <SectionLabel dark>02 / Attribution</SectionLabel>
             <h2>This Reel made<br />25 200 Kč.</h2>
             <p>
               See exactly which content drives real revenue.<br className="desktop-break" /> Wonback tracks the full journey from view to customer<br className="desktop-break" /> — so you can create more of what works.
@@ -249,7 +239,6 @@ export default function Home() {
         <div className="light-arc light-arc-two" aria-hidden="true" />
         <div className="feature-grid shell">
           <div className="feature-copy">
-            <SectionLabel>03 / Bookings</SectionLabel>
             <h2>Turn conversations<br />into bookings.</h2>
             <p>
               Share tracked booking links, let clients book on their<br className="desktop-break" /> own, and use automatic follow-ups to nudge the ones<br className="desktop-break" /> who don’t. Less manual work, more revenue.
@@ -270,7 +259,6 @@ export default function Home() {
       <section className="story" id="stories">
         <div className="story-glow" aria-hidden="true" />
         <div className="story-shell shell">
-          <div className="story-label"><SectionLabel>04 / Customer Story</SectionLabel></div>
           <div className="story-person">
             <Avatar initials="JB" className="avatar-jakub" />
             <div><blockquote>“We recovered 6 bookings<br />we would have otherwise lost.”</blockquote><p>Jakub, Get Studio, Prague</p></div>
