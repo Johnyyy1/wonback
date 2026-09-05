@@ -78,7 +78,7 @@ function AnalyticsChart() {
         <path className="chart-gridline" d="M0 121H620" />
         <path className="chart-gridline" d="M0 66H620" />
         <path className="chart-area" d="M0 120 C36 113 62 104 98 99 C132 94 155 94 193 91 C233 89 256 84 292 77 C326 70 338 62 360 51 C386 38 395 31 419 31 C451 31 460 26 492 21 C522 15 535 29 568 38 C588 45 600 49 620 55 L620 121 L0 121 Z" />
-        <path className="chart-line" d="M0 120 C36 113 62 104 98 99 C132 94 155 94 193 91 C233 89 256 84 292 77 C326 70 338 62 360 51 C386 38 395 31 419 31 C451 31 460 26 492 21 C522 15 535 29 568 38 C588 45 600 49 620 55" />
+        <path className="chart-line" pathLength="1" d="M0 120 C36 113 62 104 98 99 C132 94 155 94 193 91 C233 89 256 84 292 77 C326 70 338 62 360 51 C386 38 395 31 419 31 C451 31 460 26 492 21 C522 15 535 29 568 38 C588 45 600 49 620 55" />
         {["98,99", "155,94", "233,89", "292,77", "338,62", "386,38", "451,31", "492,21", "568,38"].map((point) => {
           const [cx, cy] = point.split(",");
           return <circle key={point} className="chart-dot" cx={cx} cy={cy} r="3.3" />;
@@ -133,7 +133,7 @@ export default function Home() {
         <div className="hero-planet" aria-hidden="true" />
         <div className="hero-lines" aria-hidden="true" />
 
-        <header className="site-header shell">
+        <header className="site-header shell hero-enter hero-enter-1">
           <a className="wordmark" href="#product" aria-label="Wonback home">wonback</a>
           <nav className="desktop-nav" aria-label="Main navigation">
             <a href="#product">Product</a>
@@ -158,17 +158,17 @@ export default function Home() {
         </header>
 
         <div className="hero-content shell">
-          <p className="eyebrow">The lead-to-revenue OS</p>
-          <h1>Stop losing customers<br />in your DMs.</h1>
-          <p className="hero-copy">
+          <p className="eyebrow hero-enter hero-enter-2">The lead-to-revenue OS</p>
+          <h1 className="hero-enter hero-enter-3">Stop losing customers<br />in your DMs.</h1>
+          <p className="hero-copy hero-enter hero-enter-4">
             Wonback finds high-intent conversations, turns them into bookings,
             <br className="desktop-break" /> and shows which content actually makes you money.
           </p>
-          <div className="hero-buttons">
+          <div className="hero-buttons hero-enter hero-enter-5">
             <a className="button button-dark" href="#start">Start free <ArrowIcon /></a>
             <a className="button button-outline" href="#demo"><PlayIcon /> Watch 2-minute demo</a>
           </div>
-          <div className="trust-row" aria-label="Trusted by more than 200 service businesses">
+          <div className="trust-row hero-enter hero-enter-6" aria-label="Trusted by more than 200 service businesses">
             <div className="avatar-stack" aria-hidden="true"><span>JM</span><span>AK</span><span>PN</span><span>LE</span></div>
             <span>Trusted by 200+ service businesses</span>
           </div>
@@ -178,7 +178,7 @@ export default function Home() {
       <section className="feature-section recovery" id="pricing">
         <div className="light-arc light-arc-one" aria-hidden="true" />
         <div className="feature-grid shell">
-          <div className="feature-copy">
+          <div className="feature-copy" data-reveal="left">
             <h2>9 990 Kč is about<br />to disappear.</h2>
             <p>
               Petr showed high buying intent but didn’t complete<br className="desktop-break" /> a booking. Wonback spots these opportunities<br className="desktop-break" /> automatically — so you can follow up at the right time<br className="desktop-break" /> and turn interest into revenue.
@@ -186,7 +186,7 @@ export default function Home() {
             <TextCta href="#recovery-card">Recover this lead</TextCta>
           </div>
 
-          <article className="opportunity-card" id="recovery-card">
+          <article className="opportunity-card" id="recovery-card" data-reveal="right">
             <div className="opportunity-header">
               <div className="person-title">
                 <Avatar initials="PN" className="avatar-petr" />
@@ -207,7 +207,7 @@ export default function Home() {
         <div className="analysis-grid" aria-hidden="true" />
         <div className="analysis-arc" aria-hidden="true" />
         <div className="feature-grid shell">
-          <div className="feature-copy feature-copy-dark">
+          <div className="feature-copy feature-copy-dark" data-reveal="left">
             <h2>This Reel made<br />25 200 Kč.</h2>
             <p>
               See exactly which content drives real revenue.<br className="desktop-break" /> Wonback tracks the full journey from view to customer<br className="desktop-break" /> — so you can create more of what works.
@@ -215,7 +215,7 @@ export default function Home() {
             <TextCta href="#analytics-card" dark>Explore content analytics</TextCta>
           </div>
 
-          <article className="analytics-card" id="analytics-card">
+          <article className="analytics-card" id="analytics-card" data-reveal="right">
             <div className="analytics-header">
               <div className="post-title">
                 <span className="instagram-icon" aria-hidden="true"><i /></span>
@@ -238,19 +238,19 @@ export default function Home() {
       <section className="feature-section bookings" id="bookings">
         <div className="light-arc light-arc-two" aria-hidden="true" />
         <div className="feature-grid shell">
-          <div className="feature-copy">
+          <div className="feature-copy" data-reveal="left">
             <h2>Turn conversations<br />into bookings.</h2>
             <p>
               Share tracked booking links, let clients book on their<br className="desktop-break" /> own, and use automatic follow-ups to nudge the ones<br className="desktop-break" /> who don’t. Less manual work, more revenue.
             </p>
             <TextCta href="#phone">See how bookings work</TextCta>
           </div>
-          <div className="phone-stage" id="phone">
+          <div className="phone-stage" id="phone" data-reveal="right">
             <PhoneMockup />
             <div className="phone-note" aria-hidden="true">From DM<br />to booked client.<br />Automatically.</div>
             <svg className="phone-arrow" viewBox="0 0 130 80" aria-hidden="true">
-              <path d="M123 4C111 50 85 68 27 64" />
-              <path d="m39 54-13 10 13 8" />
+              <path pathLength="1" d="M123 4C111 50 85 68 27 64" />
+              <path pathLength="1" d="m39 54-13 10 13 8" />
             </svg>
           </div>
         </div>
@@ -259,11 +259,11 @@ export default function Home() {
       <section className="story" id="stories">
         <div className="story-glow" aria-hidden="true" />
         <div className="story-shell shell">
-          <div className="story-person">
+          <div className="story-person" data-reveal="left">
             <Avatar initials="JB" className="avatar-jakub" />
             <div><blockquote>“We recovered 6 bookings<br />we would have otherwise lost.”</blockquote><p>Jakub, Get Studio, Prague</p></div>
           </div>
-          <div className="story-metrics">
+          <div className="story-metrics" data-reveal="right">
             <div><strong>28 700 Kč</strong><span>recovered</span></div>
             <div><strong>+37%</strong><span>more bookings</span></div>
             <div><strong>3.4x</strong><span>higher lead-to-customer<br />conversion</span></div>
@@ -274,7 +274,7 @@ export default function Home() {
       <footer className="final-cta" id="blog">
         <div className="footer-planet" aria-hidden="true" />
         <div className="footer-lines" aria-hidden="true" />
-        <div className="footer-cta shell" id="start">
+        <div className="footer-cta shell" id="start" data-reveal="up">
           <h2>Your next customer<br />is already in your DMs.</h2>
           <p>Start free today. Connect in under 2 minutes. Disconnect anytime.</p>
           <div className="hero-buttons" id="demo">
