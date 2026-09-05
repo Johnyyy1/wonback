@@ -95,6 +95,103 @@ function AnalyticsChart() {
   );
 }
 
+function ProductFlow() {
+  return (
+    <section className="product-flow" id="how-it-works" aria-labelledby="product-flow-title">
+      <div className="shell">
+        <div className="flow-heading" data-reveal="up">
+          <div>
+            <p className="system-label">Product model / Live journey</p>
+            <h2 id="product-flow-title">How Wonback works</h2>
+          </div>
+          <p>One connected system from the first comment to the revenue it creates.</p>
+        </div>
+
+        <ol className="flow-rail" aria-label="Instagram lead-to-revenue journey" data-reveal="up">
+          <li className="flow-node flow-node-content">
+            <div className="flow-node-top"><span>01 / Reel</span><time>10:41</time></div>
+            <div className="flow-object-title">
+              <span className="instagram-icon flow-instagram" aria-hidden="true"><i /></span>
+              <strong>Behind the scenes</strong>
+            </div>
+            <p><b>312</b> conversations</p>
+          </li>
+          <li className="flow-node flow-node-message">
+            <div className="flow-node-top"><span>02 / DM</span><time>10:42</time></div>
+            <blockquote>“How much is Ceramic Premium?”</blockquote>
+            <p>@petr_novak</p>
+          </li>
+          <li className="flow-node flow-node-intent">
+            <div className="flow-node-top"><span>03 / Intent</span><time>+0.4s</time></div>
+            <span className="flow-status flow-status-green">Detected</span>
+            <strong className="flow-score">94%</strong>
+            <p>Purchase intent</p>
+          </li>
+          <li className="flow-node flow-node-lead">
+            <div className="flow-node-top"><span>04 / Lead</span><time>10:42</time></div>
+            <strong>Petr Novák</strong>
+            <p>Ceramic Premium</p>
+            <b>9 990 Kč potential</b>
+          </li>
+          <li className="flow-node flow-node-followup">
+            <div className="flow-node-top"><span>05 / Follow-up</span><time>22:42</time></div>
+            <strong>After 12 hours</strong>
+            <p>Personalized DM</p>
+            <span className="flow-status flow-status-sent">Sent</span>
+          </li>
+          <li className="flow-node flow-node-booking">
+            <div className="flow-node-top"><span>06 / Booking</span><time>22:46</time></div>
+            <strong>Ceramic Premium</strong>
+            <p>Tue 23 · 11:00</p>
+            <span className="flow-status flow-status-green">Confirmed</span>
+          </li>
+          <li className="flow-node flow-node-revenue">
+            <div className="flow-node-top"><span>07 / Revenue</span><time>Paid</time></div>
+            <strong>9 990 Kč</strong>
+            <p>Attributed to Reel</p>
+            <span className="flow-source">Source verified</span>
+          </li>
+        </ol>
+      </div>
+    </section>
+  );
+}
+
+function AutomationPanel() {
+  return (
+    <article className="automation-card" id="automation-card" data-reveal="right">
+      <div className="product-card-bar">
+        <span>Automation / WB-0127</span>
+        <span className="live-status"><i /> Active</span>
+      </div>
+      <div className="automation-layout">
+        <div className="sequence-list">
+          <div className="sequence-step sequence-step-complete">
+            <span className="sequence-marker">01</span>
+            <div><small>Trigger · 10:42</small><strong>High intent detected</strong><p>Purchase confidence above 85%</p></div>
+          </div>
+          <div className="sequence-step sequence-step-complete">
+            <span className="sequence-marker">02</span>
+            <div><small>Wait</small><strong>12 hours</strong><p>Stop if a booking is completed</p></div>
+          </div>
+          <div className="sequence-step sequence-step-current">
+            <span className="sequence-marker">03</span>
+            <div><small>Instagram DM · 22:42</small><strong>Personalized follow-up</strong><p>“Hi Petr — want me to hold Tuesday at 11:00?”</p></div>
+            <span className="delivery-status">Sent</span>
+          </div>
+        </div>
+        <div className="automation-result">
+          <div className="result-label"><span>Sequence result</span><time>22:46</time></div>
+          <span className="result-check" aria-hidden="true">✓</span>
+          <strong>Lead recovered</strong>
+          <p>Petr booked Ceramic Premium four minutes after the follow-up.</p>
+          <div className="result-value"><span>Recovered revenue</span><b>9 990 Kč</b></div>
+        </div>
+      </div>
+    </article>
+  );
+}
+
 function PhoneMockup() {
   return (
     <div className="phone" aria-label="Appointment booking screen">
@@ -130,9 +227,6 @@ export default function Home() {
   return (
     <main>
       <section className="hero" id="product">
-        <div className="hero-planet" aria-hidden="true" />
-        <div className="hero-lines" aria-hidden="true" />
-
         <header className="site-header shell hero-enter hero-enter-1">
           <a className="wordmark" href="#product" aria-label="Wonback home">wonback</a>
           <nav className="desktop-nav" aria-label="Main navigation">
@@ -175,10 +269,12 @@ export default function Home() {
         </div>
       </section>
 
+      <ProductFlow />
+
       <section className="feature-section recovery" id="pricing">
-        <div className="light-arc light-arc-one" aria-hidden="true" />
         <div className="feature-grid shell">
           <div className="feature-copy" data-reveal="left">
+            <p className="chapter-label"><span>01</span> Recovery <i>High-intent signal</i></p>
             <h2>9 990 Kč is about<br />to disappear.</h2>
             <p>
               Petr showed high buying intent but didn’t complete<br className="desktop-break" /> a booking. Wonback spots these opportunities<br className="desktop-break" /> automatically — so you can follow up at the right time<br className="desktop-break" /> and turn interest into revenue.
@@ -187,6 +283,10 @@ export default function Home() {
           </div>
 
           <article className="opportunity-card" id="recovery-card" data-reveal="right">
+            <div className="product-card-bar">
+              <span>Lead recovery / WB-2841</span>
+              <span className="live-status"><i /> Monitoring</span>
+            </div>
             <div className="opportunity-header">
               <div className="person-title">
                 <Avatar initials="PN" className="avatar-petr" />
@@ -203,11 +303,25 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="feature-section automation" id="automation">
+        <div className="feature-grid shell">
+          <div className="feature-copy" data-reveal="left">
+            <p className="chapter-label"><span>02</span> Automation <i>12-hour recovery</i></p>
+            <h2>Follow up before<br />the lead goes cold.</h2>
+            <p>
+              Wonback starts the right follow-up when buying intent is<br className="desktop-break" /> high, pauses when a customer books, and keeps every<br className="desktop-break" /> conversation personal — without manual chasing.
+            </p>
+            <TextCta href="#automation-card">Explore automations</TextCta>
+          </div>
+          <AutomationPanel />
+        </div>
+      </section>
+
       <section className="feature-section attribution" id="attribution">
         <div className="analysis-grid" aria-hidden="true" />
-        <div className="analysis-arc" aria-hidden="true" />
         <div className="feature-grid shell">
           <div className="feature-copy feature-copy-dark" data-reveal="left">
+            <p className="chapter-label chapter-label-dark"><span>03</span> Attribution <i>Content revenue</i></p>
             <h2>This Reel made<br />25 200 Kč.</h2>
             <p>
               See exactly which content drives real revenue.<br className="desktop-break" /> Wonback tracks the full journey from view to customer<br className="desktop-break" /> — so you can create more of what works.
@@ -236,9 +350,9 @@ export default function Home() {
       </section>
 
       <section className="feature-section bookings" id="bookings">
-        <div className="light-arc light-arc-two" aria-hidden="true" />
         <div className="feature-grid shell">
           <div className="feature-copy" data-reveal="left">
+            <p className="chapter-label"><span>04</span> Bookings <i>Conversation closed</i></p>
             <h2>Turn conversations<br />into bookings.</h2>
             <p>
               Share tracked booking links, let clients book on their<br className="desktop-break" /> own, and use automatic follow-ups to nudge the ones<br className="desktop-break" /> who don’t. Less manual work, more revenue.
@@ -247,21 +361,25 @@ export default function Home() {
           </div>
           <div className="phone-stage" id="phone" data-reveal="right">
             <PhoneMockup />
-            <div className="phone-note" aria-hidden="true">From DM<br />to booked client.<br />Automatically.</div>
-            <svg className="phone-arrow" viewBox="0 0 130 80" aria-hidden="true">
-              <path pathLength="1" d="M123 4C111 50 85 68 27 64" />
-              <path pathLength="1" d="m39 54-13 10 13 8" />
-            </svg>
+            <div className="booking-confirmation">
+              <div className="confirmation-head"><span>Booking / WB-2841</span><time>22:46</time></div>
+              <span className="confirmation-status"><i /> Confirmed</span>
+              <strong>Ceramic Premium</strong>
+              <dl>
+                <div><dt>Customer</dt><dd>Petr Novák</dd></div>
+                <div><dt>Time</dt><dd>Tue 23 · 11:00</dd></div>
+                <div><dt>Source</dt><dd>Instagram Reel</dd></div>
+              </dl>
+            </div>
           </div>
         </div>
       </section>
 
       <section className="story" id="stories">
-        <div className="story-glow" aria-hidden="true" />
         <div className="story-shell shell">
           <div className="story-person" data-reveal="left">
             <Avatar initials="JB" className="avatar-jakub" />
-            <div><blockquote>“We recovered 6 bookings<br />we would have otherwise lost.”</blockquote><p>Jakub, Get Studio, Prague</p></div>
+            <div><span className="story-label">Customer journey / 30 days</span><blockquote>“We recovered 6 bookings<br />we would have otherwise lost.”</blockquote><p>Jakub, Get Studio, Prague</p></div>
           </div>
           <div className="story-metrics" data-reveal="right">
             <div><strong>28 700 Kč</strong><span>recovered</span></div>
@@ -272,8 +390,6 @@ export default function Home() {
       </section>
 
       <footer className="final-cta" id="blog">
-        <div className="footer-planet" aria-hidden="true" />
-        <div className="footer-lines" aria-hidden="true" />
         <div className="footer-cta shell" id="start" data-reveal="up">
           <h2>Your next customer<br />is already in your DMs.</h2>
           <p>Start free today. Connect in under 2 minutes. Disconnect anytime.</p>
@@ -283,7 +399,7 @@ export default function Home() {
           </div>
         </div>
         <div className="footer-bottom shell">
-          <div className="footer-brand"><a className="wordmark" href="#product">wonback</a><p>The lead-to-revenue OS.</p><small>© 2024 Wonback. All rights reserved.</small></div>
+          <div className="footer-brand"><a className="wordmark" href="#product">wonback</a><p>The lead-to-revenue OS.</p><small>© 2026 Wonback. All rights reserved.</small></div>
           <div className="footer-links" id="footer-nav">
             <nav aria-label="Footer navigation"><a href="#product">Product</a><a href="#pricing">Pricing</a><a href="#stories">Stories</a><a href="#blog">Blog</a></nav>
             <p>Built for service businesses.</p>
