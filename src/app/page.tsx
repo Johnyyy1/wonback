@@ -1,5 +1,3 @@
-type IconName = "calendar" | "eye" | "close";
-
 function ArrowIcon() {
   return (
     <svg aria-hidden="true" viewBox="0 0 20 20" className="icon-arrow">
@@ -25,30 +23,6 @@ function WarningIcon() {
   );
 }
 
-function TimelineIcon({ name }: { name: IconName }) {
-  const icon = {
-    calendar: (
-      <>
-        <rect x="6" y="4.5" width="8" height="11" rx="1.5" />
-        <path d="M8.2 3.5v3m3.6-3v3m-3 4h2.7" />
-      </>
-    ),
-    eye: (
-      <>
-        <path d="M3.5 10s2.3-4 6.5-4 6.5 4 6.5 4-2.3 4-6.5 4-6.5-4-6.5-4Z" />
-        <circle cx="10" cy="10" r="1.7" />
-      </>
-    ),
-    close: <path d="m6 6 8 8m0-8-8 8" />,
-  }[name];
-
-  return (
-    <span className="timeline-icon" aria-hidden="true">
-      <svg viewBox="0 0 20 20">{icon}</svg>
-    </span>
-  );
-}
-
 function Avatar({ initials, className = "" }: { initials: string; className?: string }) {
   return (
     <span className={`portrait-avatar ${className}`} role="img" aria-label={`${initials} portrait placeholder`}>
@@ -65,33 +39,85 @@ function TextCta({ children, href, dark = false }: { children: React.ReactNode; 
   );
 }
 
-function AnalyticsChart() {
+function RecoveryDecision() {
   return (
-    <div className="chart-wrap" aria-label="Revenue from this reel rose to 25,200 Czech koruna before a small decline">
-      <svg className="analytics-chart" viewBox="0 0 620 144" role="img" aria-hidden="true" preserveAspectRatio="none">
-        <defs>
-          <linearGradient id="chart-fill" x1="0" x2="0" y1="0" y2="1">
-            <stop offset="0" stopColor="#13865c" stopOpacity=".22" />
-            <stop offset="1" stopColor="#13865c" stopOpacity=".035" />
-          </linearGradient>
-        </defs>
-        <path className="chart-gridline" d="M0 121H620" />
-        <path className="chart-gridline" d="M0 66H620" />
-        <path className="chart-area" d="M0 120 C36 113 62 104 98 99 C132 94 155 94 193 91 C233 89 256 84 292 77 C326 70 338 62 360 51 C386 38 395 31 419 31 C451 31 460 26 492 21 C522 15 535 29 568 38 C588 45 600 49 620 55 L620 121 L0 121 Z" />
-        <path className="chart-line" pathLength="1" d="M0 120 C36 113 62 104 98 99 C132 94 155 94 193 91 C233 89 256 84 292 77 C326 70 338 62 360 51 C386 38 395 31 419 31 C451 31 460 26 492 21 C522 15 535 29 568 38 C588 45 600 49 620 55" />
-        {["98,99", "155,94", "233,89", "292,77", "338,62", "386,38", "451,31", "492,21", "568,38"].map((point) => {
-          const [cx, cy] = point.split(",");
-          return <circle key={point} className="chart-dot" cx={cx} cy={cy} r="3.3" />;
-        })}
-      </svg>
-      <div className="chart-tooltip">
-        <strong>25 200 Kč</strong>
-        <span>from this content</span>
+    <article className="opportunity-card" id="recovery-card" data-reveal="right">
+      <div className="product-card-bar">
+        <span>Decision layer / WB-2841</span>
+        <span className="live-status live-status-risk"><i /> Action required</span>
       </div>
-      <div className="chart-dates" aria-hidden="true">
-        <span>Apr 10</span><span>Apr 12</span><span>Apr 14</span><span>Apr 16</span><span>Apr 18</span><span>Apr 20</span>
+      <div className="decision-layout">
+        <div className="decision-main">
+          <div className="conversation-header"><span>Instagram DM</span><time>@petr_novak · 10:42</time></div>
+          <div className="conversation-thread" aria-label="Conversation with Petr Novák">
+            <div className="conversation-message"><span>Petr</span><p>“How much is Ceramic Premium?”</p></div>
+            <div className="conversation-message conversation-message-business"><span>Business</span><p>“9 990 Kč. Want me to send available dates?”</p></div>
+            <div className="conversation-message"><span>Petr</span><p>“Yes”</p></div>
+          </div>
+          <div className="decision-signal">
+            <WarningIcon />
+            <div><span>Reply overdue</span><strong>3h without response</strong></div>
+            <b>9 990 Kč <small>at risk</small></b>
+          </div>
+          <div className="recommended-action">
+            <div><span>Recommended action</span><strong>Send available booking slots</strong></div>
+            <a href="#automation">Send follow-up <ArrowIcon /></a>
+          </div>
+        </div>
+        <aside className="decision-context" aria-label="Lead context">
+          <span>Lead context</span>
+          <dl>
+            <div><dt>Source</dt><dd>Reel · Behind the scenes</dd></div>
+            <div><dt>Lead</dt><dd>Petr Novák</dd></div>
+            <div><dt>Service</dt><dd>Ceramic Premium</dd></div>
+            <div><dt>Estimated value</dt><dd>9 990 Kč</dd></div>
+            <div><dt>Last activity</dt><dd>3h ago</dd></div>
+          </dl>
+        </aside>
       </div>
-    </div>
+    </article>
+  );
+}
+
+function AttributionPanel() {
+  return (
+    <article className="analytics-card" id="analytics-card" data-reveal="right">
+      <div className="product-card-bar">
+        <span>Attribution / REEL-0412</span>
+        <span className="live-status"><i /> Source verified</span>
+      </div>
+      <div className="analytics-header">
+        <div className="post-title">
+          <span className="instagram-icon" aria-hidden="true"><i /></span>
+          <div><small>Instagram Reel</small><h3>Behind the scenes</h3><p>Posted 12 Apr 2024</p></div>
+        </div>
+        <a href="#demo">View post <ArrowIcon /></a>
+      </div>
+      <div className="attribution-path" aria-label="This Reel generated 312 conversations, 78 booking intents, 21 customers and 25,200 Czech koruna in revenue">
+        <div className="attribution-step"><strong>312</strong><span>conversations</span></div>
+        <div className="attribution-step"><strong>78</strong><span>booking intents</span></div>
+        <div className="attribution-step"><strong>21</strong><span>customers</span></div>
+        <div className="attribution-step attribution-step-revenue"><strong>25 200 Kč</strong><span>revenue</span></div>
+      </div>
+      <div className="attributed-list">
+        <div className="attributed-list-head"><span>Attributed customers</span><small>21 total · 3 shown</small></div>
+        <div className="attributed-customer">
+          <Avatar initials="PN" className="avatar-mini avatar-petr" />
+          <div><strong>Petr Novák</strong><small>Ceramic Premium</small><span>Reel → DM → Booking</span></div>
+          <b>9 990 Kč</b>
+        </div>
+        <div className="attributed-customer">
+          <Avatar initials="AK" className="avatar-mini avatar-anna" />
+          <div><strong>Anna Králová</strong><small>Paint Correction</small><span>Reel → DM → Booking</span></div>
+          <b>8 400 Kč</b>
+        </div>
+        <div className="attributed-customer">
+          <Avatar initials="LE" className="avatar-mini avatar-lucie" />
+          <div><strong>Lucie Eliášová</strong><small>Interior Detail</small><span>Reel → DM → Booking</span></div>
+          <b>6 810 Kč</b>
+        </div>
+      </div>
+    </article>
   );
 }
 
@@ -282,24 +308,7 @@ export default function Home() {
             <TextCta href="#recovery-card">Recover this lead</TextCta>
           </div>
 
-          <article className="opportunity-card" id="recovery-card" data-reveal="right">
-            <div className="product-card-bar">
-              <span>Lead recovery / WB-2841</span>
-              <span className="live-status"><i /> Monitoring</span>
-            </div>
-            <div className="opportunity-header">
-              <div className="person-title">
-                <Avatar initials="PN" className="avatar-petr" />
-                <div><h3>Petr Novák</h3><p>Ceramic Premium</p></div>
-              </div>
-              <div className="risk-badge"><WarningIcon /><span><strong>9 990 Kč</strong><small>at risk</small></span></div>
-            </div>
-            <div className="timeline">
-              <div className="timeline-row"><TimelineIcon name="calendar" /><span>Opened booking page</span><time>3h ago</time></div>
-              <div className="timeline-row"><TimelineIcon name="eye" /><span>Viewed pricing</span><time>3h ago</time></div>
-              <div className="timeline-row"><TimelineIcon name="close" /><span>No booking completed</span><time>—</time></div>
-            </div>
-          </article>
+          <RecoveryDecision />
         </div>
       </section>
 
@@ -329,23 +338,7 @@ export default function Home() {
             <TextCta href="#analytics-card" dark>Explore content analytics</TextCta>
           </div>
 
-          <article className="analytics-card" id="analytics-card" data-reveal="right">
-            <div className="analytics-header">
-              <div className="post-title">
-                <span className="instagram-icon" aria-hidden="true"><i /></span>
-                <div><h3>Reel · Behind the scenes</h3><p>Posted 12 Apr 2024</p></div>
-              </div>
-              <a href="#demo">View post <ArrowIcon /></a>
-            </div>
-            <div className="metrics-row">
-              <div><strong>542</strong><span>views</span></div>
-              <div><strong>312</strong><span>conversations</span></div>
-              <div><strong>78</strong><span>bookings</span></div>
-              <div><strong>21</strong><span>customers</span></div>
-              <div className="revenue-metric"><strong>25 200 Kč</strong><span>revenue</span></div>
-            </div>
-            <AnalyticsChart />
-          </article>
+          <AttributionPanel />
         </div>
       </section>
 
@@ -363,13 +356,15 @@ export default function Home() {
             <PhoneMockup />
             <div className="booking-confirmation">
               <div className="confirmation-head"><span>Booking / WB-2841</span><time>22:46</time></div>
-              <span className="confirmation-status"><i /> Confirmed</span>
+              <span className="confirmation-status"><i /> Closed loop complete</span>
               <strong>Ceramic Premium</strong>
-              <dl>
-                <div><dt>Customer</dt><dd>Petr Novák</dd></div>
-                <div><dt>Time</dt><dd>Tue 23 · 11:00</dd></div>
-                <div><dt>Source</dt><dd>Instagram Reel</dd></div>
-              </dl>
+              <p>Petr Novák · Tue 23 · 11:00</p>
+              <ol className="closed-loop" aria-label="Closed-loop booking attribution">
+                <li><span>Booking confirmed</span><b>22:46</b></li>
+                <li><span>Customer created</span><b>Petr Novák</b></li>
+                <li><span>Revenue recorded</span><b>9 990 Kč</b></li>
+                <li><span>Source</span><b>Reel · Behind the scenes</b></li>
+              </ol>
             </div>
           </div>
         </div>
