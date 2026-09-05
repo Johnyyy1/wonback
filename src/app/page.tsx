@@ -6,14 +6,6 @@ function ArrowIcon() {
   );
 }
 
-function PlayIcon() {
-  return (
-    <svg aria-hidden="true" viewBox="0 0 20 20" className="icon-play">
-      <path d="m7 5 8 5-8 5V5Z" />
-    </svg>
-  );
-}
-
 function WarningIcon() {
   return (
     <svg aria-hidden="true" viewBox="0 0 24 24" className="warning-icon">
@@ -25,7 +17,7 @@ function WarningIcon() {
 
 function Avatar({ initials, className = "" }: { initials: string; className?: string }) {
   return (
-    <span className={`portrait-avatar ${className}`} role="img" aria-label={`${initials} portrait placeholder`}>
+    <span className={`portrait-avatar ${className}`} role="img" aria-label={`${initials} demo contact`}>
       <span>{initials}</span>
     </span>
   );
@@ -89,9 +81,9 @@ function AttributionPanel() {
       <div className="analytics-header">
         <div className="post-title">
           <span className="instagram-icon" aria-hidden="true"><i /></span>
-          <div><small>Instagram Reel</small><h3>Behind the scenes</h3><p>Posted 12 Apr 2024</p></div>
+          <div><small>Instagram Reel</small><h3>Behind the scenes</h3><p>Demo activity · This week</p></div>
         </div>
-        <a href="#demo">View post <ArrowIcon /></a>
+        <a href="#demo-journey">Trace journey <ArrowIcon /></a>
       </div>
       <div className="attribution-path" aria-label="This Reel generated 312 conversations, 78 booking intents, 21 customers and 25,200 Czech koruna in revenue">
         <div className="attribution-step"><strong>312</strong><span>conversations</span></div>
@@ -102,17 +94,17 @@ function AttributionPanel() {
       <div className="attributed-list">
         <div className="attributed-list-head"><span>Attributed customers</span><small>21 total · 3 shown</small></div>
         <div className="attributed-customer">
-          <Avatar initials="PN" className="avatar-mini avatar-petr" />
+          <Avatar initials="PN" className="avatar-mini" />
           <div><strong>Petr Novák</strong><small>Ceramic Premium</small><span>Reel → DM → Booking</span></div>
           <b>9 990 Kč</b>
         </div>
         <div className="attributed-customer">
-          <Avatar initials="AK" className="avatar-mini avatar-anna" />
+          <Avatar initials="AK" className="avatar-mini" />
           <div><strong>Anna Králová</strong><small>Paint Correction</small><span>Reel → DM → Booking</span></div>
           <b>8 400 Kč</b>
         </div>
         <div className="attributed-customer">
-          <Avatar initials="LE" className="avatar-mini avatar-lucie" />
+          <Avatar initials="LE" className="avatar-mini" />
           <div><strong>Lucie Eliášová</strong><small>Interior Detail</small><span>Reel → DM → Booking</span></div>
           <b>6 810 Kč</b>
         </div>
@@ -127,7 +119,7 @@ function ProductFlow() {
       <div className="shell">
         <div className="flow-heading" data-reveal="up">
           <div>
-            <p className="system-label">Product model / Live journey</p>
+            <p className="system-label">Product model / Example workflow</p>
             <h2 id="product-flow-title">How Wonback works</h2>
           </div>
           <p>One connected system from the first comment to the revenue it creates.</p>
@@ -257,22 +249,22 @@ export default function Home() {
           <a className="wordmark" href="#product" aria-label="Wonback home">wonback</a>
           <nav className="desktop-nav" aria-label="Main navigation">
             <a href="#product">Product</a>
-            <a href="#pricing">Pricing</a>
-            <a href="#stories">Stories</a>
-            <a href="#blog">Blog</a>
+            <a href="#how-it-works">How it works</a>
+            <a href="#features">Features</a>
+            <a href="#demo-journey">Demo journey</a>
           </nav>
           <div className="header-actions">
-            <a className="login-link" href="#login">Log in</a>
-            <a className="button button-dark button-small" href="#start">Start free <ArrowIcon /></a>
+            <a className="login-link" href="mailto:hello@wonback.com">Email us</a>
+            <a className="button button-dark button-small" href="#how-it-works">See product <ArrowIcon /></a>
           </div>
           <details className="mobile-menu">
             <summary aria-label="Open navigation"><span /><span /></summary>
             <nav aria-label="Mobile navigation">
               <a href="#product">Product</a>
-              <a href="#pricing">Pricing</a>
-              <a href="#stories">Stories</a>
-              <a href="#blog">Blog</a>
-              <a href="#start">Start free</a>
+              <a href="#how-it-works">How it works</a>
+              <a href="#features">Features</a>
+              <a href="#demo-journey">Demo journey</a>
+              <a href="mailto:hello@wonback.com">Email Wonback</a>
             </nav>
           </details>
         </header>
@@ -282,30 +274,30 @@ export default function Home() {
           <h1 className="hero-enter hero-enter-3">Stop losing customers<br />in your DMs.</h1>
           <p className="hero-copy hero-enter hero-enter-4">
             Wonback finds high-intent conversations, turns them into bookings,
-            <br className="desktop-break" /> and shows which content actually makes you money.
+            <br className="desktop-break" /> and shows which Instagram content creates revenue.
           </p>
           <div className="hero-buttons hero-enter hero-enter-5">
-            <a className="button button-dark" href="#start">Start free <ArrowIcon /></a>
-            <a className="button button-outline" href="#demo"><PlayIcon /> Watch 2-minute demo</a>
+            <a className="button button-dark" href="#how-it-works">See how it works <ArrowIcon /></a>
+            <a className="button button-outline" href="#demo-journey">Follow demo journey <ArrowIcon /></a>
           </div>
-          <div className="trust-row hero-enter hero-enter-6" aria-label="Trusted by more than 200 service businesses">
-            <div className="avatar-stack" aria-hidden="true"><span>JM</span><span>AK</span><span>PN</span><span>LE</span></div>
-            <span>Trusted by 200+ service businesses</span>
+          <div className="product-fit-row hero-enter hero-enter-6">
+            <i aria-hidden="true" />
+            <span>Built for service businesses selling through Instagram</span>
           </div>
         </div>
       </section>
 
       <ProductFlow />
 
-      <section className="feature-section recovery" id="pricing">
+      <section className="feature-section recovery" id="features">
         <div className="feature-grid shell">
           <div className="feature-copy" data-reveal="left">
             <p className="chapter-label"><span>01</span> Recovery <i>High-intent signal</i></p>
             <h2>9 990 Kč is about<br />to disappear.</h2>
             <p>
-              Petr showed high buying intent but didn’t complete<br className="desktop-break" /> a booking. Wonback spots these opportunities<br className="desktop-break" /> automatically — so you can follow up at the right time<br className="desktop-break" /> and turn interest into revenue.
+              Petr asked about Ceramic Premium, but the conversation<br className="desktop-break" /> stopped before he booked. Wonback flags the overdue reply<br className="desktop-break" /> and keeps the value, source, and next action in one place.
             </p>
-            <TextCta href="#recovery-card">Recover this lead</TextCta>
+            <TextCta href="#recovery-card">Review at-risk lead</TextCta>
           </div>
 
           <RecoveryDecision />
@@ -318,9 +310,9 @@ export default function Home() {
             <p className="chapter-label"><span>02</span> Automation <i>12-hour recovery</i></p>
             <h2>Follow up before<br />the lead goes cold.</h2>
             <p>
-              Wonback starts the right follow-up when buying intent is<br className="desktop-break" /> high, pauses when a customer books, and keeps every<br className="desktop-break" /> conversation personal — without manual chasing.
+              When purchase intent is high, Wonback waits 12 hours,<br className="desktop-break" /> sends a personal DM, and stops the sequence if the lead books.
             </p>
-            <TextCta href="#automation-card">Explore automations</TextCta>
+            <TextCta href="#automation-card">Inspect automation</TextCta>
           </div>
           <AutomationPanel />
         </div>
@@ -333,9 +325,9 @@ export default function Home() {
             <p className="chapter-label chapter-label-dark"><span>03</span> Attribution <i>Content revenue</i></p>
             <h2>This Reel made<br />25 200 Kč.</h2>
             <p>
-              See exactly which content drives real revenue.<br className="desktop-break" /> Wonback tracks the full journey from view to customer<br className="desktop-break" /> — so you can create more of what works.
+              Follow a Reel from its first DM to each booked customer<br className="desktop-break" /> and the revenue recorded against it.
             </p>
-            <TextCta href="#analytics-card" dark>Explore content analytics</TextCta>
+            <TextCta href="#analytics-card" dark>Trace Reel revenue</TextCta>
           </div>
 
           <AttributionPanel />
@@ -348,9 +340,9 @@ export default function Home() {
             <p className="chapter-label"><span>04</span> Bookings <i>Conversation closed</i></p>
             <h2>Turn conversations<br />into bookings.</h2>
             <p>
-              Share tracked booking links, let clients book on their<br className="desktop-break" /> own, and use automatic follow-ups to nudge the ones<br className="desktop-break" /> who don’t. Less manual work, more revenue.
+              Send a tracked booking link in the conversation. If someone<br className="desktop-break" /> books, Wonback stops the follow-up and records the customer,<br className="desktop-break" /> value, and Reel source.
             </p>
-            <TextCta href="#phone">See how bookings work</TextCta>
+            <TextCta href="#phone">Inspect booking loop</TextCta>
           </div>
           <div className="phone-stage" id="phone" data-reveal="right">
             <PhoneMockup />
@@ -370,37 +362,44 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="story" id="stories">
-        <div className="story-shell shell">
-          <div className="story-person" data-reveal="left">
-            <Avatar initials="JB" className="avatar-jakub" />
-            <div><span className="story-label">Customer journey / 30 days</span><blockquote>“We recovered 6 bookings<br />we would have otherwise lost.”</blockquote><p>Jakub, Get Studio, Prague</p></div>
+      <section className="story demo-journey" id="demo-journey" aria-labelledby="demo-journey-title">
+        <div className="demo-journey-shell shell">
+          <div className="demo-journey-heading" data-reveal="up">
+            <div>
+              <p className="chapter-label"><span>05</span> Customer journey <i>Demo journey</i></p>
+              <h2 id="demo-journey-title">One conversation.<br />The full journey.</h2>
+            </div>
+            <p>A product demonstration using the same example lead from first Reel to attributed revenue.</p>
           </div>
-          <div className="story-metrics" data-reveal="right">
-            <div><strong>28 700 Kč</strong><span>recovered</span></div>
-            <div><strong>+37%</strong><span>more bookings</span></div>
-            <div><strong>3.4x</strong><span>higher lead-to-customer<br />conversion</span></div>
-          </div>
+          <ol className="journey-rail" aria-label="Demo customer journey for Petr Novák" data-reveal="up">
+            <li><small>01 / Instagram Reel</small><strong>Behind the scenes</strong><span>Content source</span></li>
+            <li><small>02 / DM</small><strong>“How much is Ceramic Premium?”</strong><span>Incoming question</span></li>
+            <li><small>03 / High intent</small><strong>94%</strong><span>Purchase intent</span></li>
+            <li><small>04 / Lead</small><strong>Petr Novák</strong><span>9 990 Kč potential</span></li>
+            <li><small>05 / Follow-up</small><strong>Sent after 12h</strong><span>Personalized DM</span></li>
+            <li><small>06 / Booking</small><strong>Tue 23 · 11:00</strong><span>Ceramic Premium</span></li>
+            <li><small>07 / Customer</small><strong>9 990 Kč</strong><span>Revenue recorded</span></li>
+            <li><small>08 / Attribution</small><strong>Behind the scenes</strong><span>Revenue credited to Reel</span></li>
+          </ol>
         </div>
       </section>
 
-      <footer className="final-cta" id="blog">
-        <div className="footer-cta shell" id="start" data-reveal="up">
-          <h2>Your next customer<br />is already in your DMs.</h2>
-          <p>Start free today. Connect in under 2 minutes. Disconnect anytime.</p>
-          <div className="hero-buttons" id="demo">
-            <a className="button button-light" href="mailto:hello@wonback.com">Start free <ArrowIcon /></a>
-            <a className="button button-outline-dark" href="#product"><PlayIcon /> Watch demo</a>
+      <footer className="final-cta" id="contact">
+        <div className="footer-cta shell" data-reveal="up">
+          <h2>See the full path<br />from DM to revenue.</h2>
+          <p>Review the example workflow, then tell us how your Instagram sales process works.</p>
+          <div className="hero-buttons">
+            <a className="button button-light" href="mailto:hello@wonback.com">Email Wonback <ArrowIcon /></a>
+            <a className="button button-outline-dark" href="#demo-journey">Review demo journey <ArrowIcon /></a>
           </div>
         </div>
         <div className="footer-bottom shell">
           <div className="footer-brand"><a className="wordmark" href="#product">wonback</a><p>The lead-to-revenue OS.</p><small>© 2026 Wonback. All rights reserved.</small></div>
           <div className="footer-links" id="footer-nav">
-            <nav aria-label="Footer navigation"><a href="#product">Product</a><a href="#pricing">Pricing</a><a href="#stories">Stories</a><a href="#blog">Blog</a></nav>
-            <p>Built for service businesses.</p>
+            <nav aria-label="Footer navigation"><a href="#product">Product</a><a href="#how-it-works">How it works</a><a href="#features">Features</a><a href="#demo-journey">Demo journey</a></nav>
+            <p>Built for service businesses selling through Instagram.</p>
           </div>
         </div>
-        <span id="login" className="anchor-target" aria-hidden="true" />
       </footer>
     </main>
   );

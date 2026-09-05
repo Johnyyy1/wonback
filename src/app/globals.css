@@ -237,8 +237,7 @@ a:focus-visible {
   padding-inline: 22px;
 }
 
-.icon-arrow,
-.icon-play {
+.icon-arrow {
   width: 18px;
   height: 18px;
   flex: none;
@@ -248,11 +247,6 @@ a:focus-visible {
   stroke-linecap: round;
   stroke-linejoin: round;
   transition: transform 220ms cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.icon-play {
-  width: 17px;
-  height: 17px;
 }
 
 .hero-content {
@@ -296,41 +290,23 @@ a:focus-visible {
   margin-top: 20px;
 }
 
-.trust-row {
+.product-fit-row {
   display: flex;
   align-items: center;
-  gap: 13px;
+  gap: 9px;
   margin-top: 17px;
   font-size: 10px;
   color: rgba(8, 20, 33, 0.78);
 }
 
-.avatar-stack {
-  display: flex;
-  padding-left: 7px;
-}
-
-.avatar-stack span {
-  width: 27px;
-  height: 27px;
-  margin-left: -7px;
-  border: 2px solid #edf0ef;
+.product-fit-row i {
+  width: 6px;
+  height: 6px;
+  flex: none;
   border-radius: 50%;
-  display: grid;
-  place-items: center;
-  color: transparent;
-  font-size: 0;
-  font-weight: 650;
-  background-image: url("/portraits.png");
-  background-repeat: no-repeat;
-  background-size: 300% 200%;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.18);
+  background: var(--green);
+  box-shadow: 0 0 0 3px rgba(19, 134, 92, 0.1);
 }
-
-.avatar-stack span:nth-child(1) { background-position: 100% 0; }
-.avatar-stack span:nth-child(2) { background-position: 0 100%; }
-.avatar-stack span:nth-child(3) { background-position: 50% 100%; }
-.avatar-stack span:nth-child(4) { background-position: 100% 100%; }
 
 /* Lead-to-revenue product flow */
 .product-flow {
@@ -364,8 +340,7 @@ a:focus-visible {
 .system-label,
 .chapter-label,
 .product-card-bar,
-.flow-node-top,
-.story-label {
+.flow-node-top {
   font-family: var(--font-geist-mono), monospace;
   text-transform: uppercase;
   letter-spacing: 0.13em;
@@ -496,6 +471,10 @@ a:focus-visible {
   width: 4px;
   height: 4px;
   border-width: 1.5px;
+}
+
+blockquote {
+  margin: 0;
 }
 
 .flow-node blockquote {
@@ -728,14 +707,12 @@ a:focus-visible {
   place-items: center;
   overflow: hidden;
   border-radius: 50%;
-  color: rgba(255, 255, 255, 0.92);
+  color: #344753;
   font-size: 15px;
   font-weight: 590;
   letter-spacing: 0.06em;
-  background-image: url("/portraits.png");
-  background-repeat: no-repeat;
-  background-size: 300% 200%;
-  box-shadow: inset 0 0 0 1px rgba(9, 21, 32, 0.08);
+  background: #e8ece9;
+  box-shadow: inset 0 0 0 1px rgba(9, 21, 32, 0.1);
 }
 
 .portrait-avatar::after {
@@ -745,13 +722,8 @@ a:focus-visible {
 .portrait-avatar > span {
   position: relative;
   z-index: 2;
-  margin-top: 32px;
   font-size: 8px;
-  opacity: 0;
-}
-
-.avatar-petr {
-  background-position: 0 0;
+  opacity: 1;
 }
 
 .live-status-risk {
@@ -1364,14 +1336,6 @@ a:focus-visible {
   height: 30px;
 }
 
-.avatar-anna {
-  background-position: 0 100%;
-}
-
-.avatar-lucie {
-  background-position: 100% 100%;
-}
-
 .attributed-customer > div {
   min-width: 0;
   display: grid;
@@ -1707,9 +1671,10 @@ a:focus-visible {
   font-weight: 590;
 }
 
-/* Customer story */
+/* Demo customer journey */
 .story {
-  min-height: 215px;
+  min-height: 365px;
+  padding: 48px 0 52px;
   position: relative;
   overflow: hidden;
   isolation: isolate;
@@ -1721,91 +1686,91 @@ a:focus-visible {
   background-size: cover;
 }
 
-.story-shell {
-  min-height: 215px;
-  display: grid;
-  grid-template-columns: 1.05fr 1fr;
-  align-items: center;
-  gap: 54px;
-}
-
-.story-person {
-  padding-top: 30px;
+.demo-journey-heading {
   display: flex;
-  align-items: center;
-  gap: 29px;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 40px;
 }
 
-.story-label {
-  display: block;
-  margin-bottom: 10px;
-  color: #7b6957;
-  font-size: 8px;
-  font-weight: 560;
+.demo-journey-heading h2 {
+  margin: 17px 0 0;
+  font-size: 40px;
+  line-height: 0.98;
+  letter-spacing: -0.052em;
+  font-weight: 390;
 }
 
-.avatar-jakub {
-  width: 104px;
-  height: 104px;
-  background-position: 50% 0;
-  box-shadow: 0 12px 30px rgba(24, 33, 37, 0.1);
-}
-
-.avatar-jakub::after {
-  content: none;
-}
-
-blockquote {
-  margin: 0;
-}
-
-.story-person blockquote {
-  font-size: 28px;
-  line-height: 1.13;
-  letter-spacing: -0.045em;
-  font-weight: 410;
-}
-
-.story-person p {
-  margin: 13px 0 0 22px;
+.demo-journey-heading > p {
+  max-width: 360px;
+  margin: 0 0 3px;
   color: #6d7783;
   font-size: 13px;
+  line-height: 1.45;
 }
 
-.story-metrics {
-  padding-top: 29px;
+.journey-rail {
+  margin: 35px 0 0;
+  padding: 0;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+  list-style: none;
+  border-top: 1px solid rgba(28, 42, 54, 0.19);
+  border-bottom: 1px solid rgba(28, 42, 54, 0.19);
+  background: rgba(255, 252, 246, 0.55);
 }
 
-.story-metrics > div {
-  min-height: 89px;
-  padding: 0 23px;
+.journey-rail li {
+  min-width: 0;
+  min-height: 126px;
+  padding: 16px 13px 15px;
+  position: relative;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border-left: 1px solid rgba(28, 42, 54, 0.19);
-  text-align: center;
+  border-left: 1px solid rgba(28, 42, 54, 0.14);
 }
 
-.story-metrics > div:first-child {
+.journey-rail li:first-child {
   border-left: 0;
 }
 
-.story-metrics strong {
-  font-size: 27px;
-  line-height: 1;
-  letter-spacing: -0.04em;
-  font-weight: 620;
-  white-space: nowrap;
+.journey-rail li:not(:last-child)::after {
+  content: "";
+  width: 7px;
+  height: 7px;
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  right: -4px;
+  border-top: 1px solid #87949b;
+  border-right: 1px solid #87949b;
+  background: #fffaf1;
+  transform: translateY(-50%) rotate(45deg);
 }
 
-.story-metrics span {
-  margin-top: 11px;
+.journey-rail small {
+  color: #7b6957;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 7px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.journey-rail strong {
+  margin-top: 19px;
+  color: #172630;
+  font-size: 12px;
+  line-height: 1.3;
+  letter-spacing: -0.015em;
+  font-weight: 620;
+}
+
+.journey-rail span {
+  margin-top: auto;
+  padding-top: 10px;
   color: #67788a;
-  font-size: 13px;
-  line-height: 1.25;
+  font-size: 8px;
+  line-height: 1.3;
 }
 
 /* Final CTA and footer */
@@ -1932,11 +1897,6 @@ blockquote {
   margin-top: 24px;
 }
 
-.anchor-target {
-  position: absolute;
-  top: 0;
-}
-
 /* Motion system */
 .hero-enter {
   opacity: 0;
@@ -2014,7 +1974,7 @@ blockquote {
   .analytics-card .attribution-step,
   .analytics-card .attributed-customer,
   .booking-confirmation .closed-loop li,
-  .story-metrics > div {
+  .journey-rail li {
     animation: detailEnter linear both;
     animation-timeline: view();
     animation-range: entry 0% entry 85%;
@@ -2032,9 +1992,6 @@ blockquote {
     animation-range: entry 15% entry 100%;
   }
 
-  .story-metrics > div:nth-child(1) { animation-range: entry 0% entry 70%; }
-  .story-metrics > div:nth-child(2) { animation-range: entry 10% entry 80%; }
-  .story-metrics > div:nth-child(3) { animation-range: entry 20% entry 90%; }
 }
 
 @supports (animation-timeline: scroll()) {
@@ -2285,15 +2242,21 @@ blockquote {
     padding: 55px 0 48px;
   }
 
-  .story-shell {
-    min-height: 0;
-    grid-template-columns: 1fr;
-    gap: 38px;
+  .journey-rail {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .story-person,
-  .story-metrics {
-    padding-top: 0;
+  .journey-rail li {
+    min-height: 112px;
+    border-top: 1px solid rgba(28, 42, 54, 0.14);
+  }
+
+  .journey-rail li:nth-child(odd) {
+    border-left: 0;
+  }
+
+  .journey-rail li::after {
+    display: none;
   }
 }
 
@@ -2335,7 +2298,7 @@ blockquote {
     max-width: 300px;
   }
 
-  .trust-row {
+  .product-fit-row {
     margin-top: 20px;
     color: rgba(246, 248, 249, 0.9);
   }
@@ -2524,40 +2487,44 @@ blockquote {
   }
 
   .story {
-    padding-block: 58px 45px;
+    padding-block: 58px 50px;
   }
 
-  .story-person {
-    align-items: flex-start;
-    gap: 18px;
+  .demo-journey-heading {
+    display: block;
   }
 
-  .avatar-jakub {
-    width: 78px;
-    height: 78px;
+  .demo-journey-heading h2 {
+    font-size: 38px;
   }
 
-  .story-person blockquote {
-    font-size: 22px;
-  }
-
-  .story-person p {
-    margin-left: 0;
+  .demo-journey-heading > p {
+    margin-top: 17px;
     font-size: 12px;
   }
 
-  .story-metrics {
+  .journey-rail {
     grid-template-columns: 1fr;
+    margin-top: 29px;
   }
 
-  .story-metrics > div {
-    min-height: 82px;
+  .journey-rail li {
+    min-height: 88px;
+    padding: 14px 14px 13px;
+    border-top: 1px solid rgba(28, 42, 54, 0.14);
     border-left: 0;
-    border-top: 1px solid rgba(28, 42, 54, 0.15);
   }
 
-  .story-metrics > div:first-child {
+  .journey-rail li:first-child {
     border-top: 0;
+  }
+
+  .journey-rail strong {
+    margin-top: 10px;
+  }
+
+  .journey-rail span {
+    padding-top: 5px;
   }
 
   .final-cta {
